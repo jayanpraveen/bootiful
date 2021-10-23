@@ -16,7 +16,7 @@ public class ReservationClient {
 	private final WebClient webClient;
 
 	public Flux<Reservation> getAllReservations() {
-		return this.webClient.get().uri("http://localhost:8080/reserations").retrieve().bodyToFlux(Reservation.class);
+		return this.webClient.get().uri("http://localhost:8080/reservations").retrieve().bodyToFlux(Reservation.class);
 	}
 
 }
@@ -25,5 +25,5 @@ public class ReservationClient {
 @AllArgsConstructor
 @NoArgsConstructor
 class Reservation {
-	private String id, reservationName;
+	private String id, name;
 }
